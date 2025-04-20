@@ -6,7 +6,9 @@ import os
 # --- CONFIG ---
 FEEDS = {
     "Twitter - @EPAKIM1": "https://nitter.privacydev.net/EPAKIM1/rss",
-    "Twitter - @MasatoTouma": "https://nitter.privacydev.net/MasatoTouma/rss"
+    "Twitter - @MasatoTouma": "https://nitter.privacydev.net/MasatoTouma/rss",
+    "Twitter - @EPAKIM1": "https://nitter.poast.org/EPAKIM1/rss",
+    "Twitter - @MasatoTouma": "https://nitter.poast.org/MasatoTouma/rss"
 }
 
 WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK")
