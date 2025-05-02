@@ -3,6 +3,17 @@ import requests
 import json
 import os
 
+# --- DEBUG ---
+
+def debug_feed(url):
+    print(f"Fetching raw feed from: {url}")
+    try:
+        r = requests.get(url)
+        print(f"HTTP {r.status_code}")
+        print(r.text[:1000])  # show first 1000 chars
+    except Exception as e:
+        print(f"Request failed: {e}")
+
 # --- CONFIG ---
 FEEDS = {
     "Twitter - @EPAKIM1": "https://nitter.privacydev.net/EPAKIM1/rss",
@@ -27,6 +38,7 @@ def send_to_discord(title, link, source):
 
 # --- Process each feed ---
 for source, url in FEEDS.items():
+    debug_feed(url) # <--- TEMPORARY LINE FOR DEBUG!!!
     print(f"Checking feed: {source} ({url})")
     feed = feedparser.parse(url)
     if not feed.entries:
